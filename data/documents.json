@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "title": "Introduction to Python Programming",
+    "category": "Programming",
+    "content": "Python is a popular programming language used for automation, scripting, data analysis, and web development. Beginners appreciate its readable syntax."
+  },
+  {
+    "id": 2,
+    "title": "Data Science Fundamentals",
+    "category": "Data Science",
+    "content": "Data science combines statistics, programming, and domain knowledge to extract useful insights from data using analysis and visualization."
+  },
+  {
+    "id": 3,
+    "title": "Machine Learning Basics",
+    "category": "Artificial Intelligence",
+    "content": "Machine learning enables computer systems to learn patterns from data. Common methods include supervised learning, classification, and regression."
+  },
+  {
+    "id": 4,
+    "title": "Database Management Systems",
+    "category": "Database",
+    "content": "A database management system stores, organizes, retrieves, and protects structured information. SQL is widely used to query relational databases."
+  },
+  {
+    "id": 5,
+    "title": "Java Enterprise Development",
+    "category": "Programming",
+    "content": "Java is an object-oriented programming language used to build enterprise applications, backend services, and platform-independent software."
+  },
+  {
+    "id": 6,
+    "title": "Web Development with Python",
+    "category": "Web Development",
+    "content": "Python web frameworks help developers build websites, APIs, and web applications. Web development includes frontend and backend engineering."
+  },
+  {
+    "id": 7,
+    "title": "Artificial Intelligence Overview",
+    "category": "Artificial Intelligence",
+    "content": "Artificial intelligence studies systems that perform tasks associated with human intelligence, including reasoning, language processing, and learning."
+  },
+  {
+    "id": 8,
+    "title": "Big Data Technologies",
+    "category": "Data Science",
+    "content": "Big data platforms process large datasets with distributed storage and computing. Data engineering prepares reliable data pipelines for analytics."
+  },
+  {
+    "id": 9,
+    "title": "Information Retrieval Models",
+    "category": "Information Retrieval",
+    "content": "Information retrieval finds relevant documents from collections. Boolean retrieval represents each term as a set of document identifiers and combines sets with AND OR and NOT."
+  },
+  {
+    "id": 10,
+    "title": "Operating System Concepts",
+    "category": "Computer Science",
+    "content": "An operating system manages computer hardware, memory, processes, files, and application execution."
+  }
+]

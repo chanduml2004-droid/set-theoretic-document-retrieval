@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Set-Theoretic Document Retrieval</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="hero">
+  <div class="eyebrow">INFORMATION RETRIEVAL · BOOLEAN MODEL</div>
+  <h1>Set-Theoretic <span>Document Retrieval</span></h1>
+  <p>Find documents using set operations: AND, OR, NOT and parentheses.</p>
+</header>
+<main>
+  <section class="panel search-panel">
+    <label for="query">Boolean search query</label>
+    <div class="search-row">
+      <input id="query" value="python AND data" placeholder="e.g. machine AND learning" autocomplete="off">
+      <button id="searchBtn">Search documents</button>
+    </div>
+    <div class="hint">Operators are case-insensitive. Adjacent terms imply AND. Example: <code>(python OR java) AND NOT web</code></div>
+    <div class="examples">
+      <span>Try:</span>
+      <button class="chip" data-query="python AND data">python AND data</button>
+      <button class="chip" data-query="machine OR learning">machine OR learning</button>
+      <button class="chip" data-query="NOT database">NOT database</button>
+      <button class="chip" data-query="(python OR java) AND NOT web">(python OR java) AND NOT web</button>
+    </div>
+    <div id="error" class="error" role="alert"></div>
+  </section>
+
+  <section class="stats" aria-live="polite">
+    <div class="stat"><strong id="resultCount">—</strong><span>Matching documents</span></div>
+    <div class="stat"><strong id="vocabCount">—</strong><span>Indexed terms</span></div>
+    <div class="stat"><strong id="docCount">—</strong><span>Total documents</span></div>
+  </section>
+
+  <section class="results-section">
+    <div class="section-heading"><div><div class="eyebrow">RETRIEVAL OUTPUT</div><h2>Matching documents</h2></div><span id="queryLabel"></span></div>
+    <div id="results" class="results"><div class="empty">Run a search to see matching documents.</div></div>
+  </section>
+
+  <section class="panel explanation">
+    <div class="eyebrow">HOW IT WORKS</div><h2>Boolean set operations</h2>
+    <div class="operation-grid">
+      <div><b>AND · Intersection</b><p>Returns documents containing both terms. <code>A ∩ B</code></p></div>
+      <div><b>OR · Union</b><p>Returns documents containing either term. <code>A ∪ B</code></p></div>
+      <div><b>NOT · Complement</b><p>Returns documents that do not contain a term. <code>U − A</code></p></div>
+    </div>
+    <p class="note">The system tokenizes each document, builds an inverted index (term → document-ID set), and evaluates Boolean expressions using operator precedence: NOT, then AND, then OR.</p>
+  </section>
+</main>
+<footer>Set-Theoretic Document Retrieval System · Academic mini project</footer>
+<script src="/static/app.js"></script>
+</body></html>
