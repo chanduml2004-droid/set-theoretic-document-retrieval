@@ -35,3 +35,69 @@ queryInput.addEventListener("keydown", e => { if(e.key === "Enter") runSearch();
 document.querySelectorAll(".chip").forEach(chip => chip.addEventListener("click", () => {queryInput.value=chip.dataset.query;runSearch();}));
 loadDocumentCount();
 runSearch();
+// Document Library Section
+
+let allDocuments = [];
+
+async function loadDocumentsSection() {
+    const container = document.getElementById("documentsList");
+
+    try {
+        const response = await fetch("/api/documents");
+        if (!response.ok) {
+            throw new Error("Unable to load documents");
+        }
+
+        allDocuments = await response.json();
+        displayDocuments(allDocuments);
+
+    } catch (error) {
+        container.innerHTML =
+            '<div class="empty">Unable to load documents.</div>';
+    }
+}
+
+function displayDocuments(documents) {
+    const container = document.getElementById("documentsList");
+
+    if (documents.length === 0) {
+        container.innerHTML =
+            '<div class="empty">No documents found.</div>';
+        return;
+    }
+
+    container.innerHTML = documents.map(doc => `
+        <article class="doc">
+            <div class="doc-top">
+                <h3>${escapeHtml(doc.title)}</h3>
+                <span class="doc-id">
+                    DOC-${String(doc.id).padStart(3, "0")}
+                </span>
+            </div>
+
+            <p>${escapeHtml(doc.content)}</p>
+
+            <div class="meta">
+                Category: ${escapeHtml(doc.category)}
+            </div>
+        </article>
+    `).join("");
+}
+
+// Filter documents
+document.getElementById("documentFilter")
+    .addEventListener("input", function () {
+
+        const keyword = this.value.toLowerCase();
+
+        const filtered = allDocuments.filter(doc =>
+            doc.title.toLowerCase().includes(keyword) ||
+            doc.category.toLowerCase().includes(keyword) ||
+            doc.content.toLowerCase().includes(keyword)
+        );
+
+        displayDocuments(filtered);
+    });
+
+// Load document collection
+loadDocumentsSection();

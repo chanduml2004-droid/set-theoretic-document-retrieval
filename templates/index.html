@@ -35,7 +35,27 @@
     <div class="stat"><strong id="docCount">—</strong><span>Total documents</span></div>
   </section>
 
-  <section class="results-section">
+ <section class="results-section" id="documents-section">
+  <div class="section-heading">
+    <div>
+      <div class="eyebrow">DOCUMENT COLLECTION</div>
+      <h2>Document Library</h2>
+    </div>
+    <span>Available Documents</span>
+  </div>
+
+  <div class="search-row">
+    <input
+      type="text"
+      id="documentFilter"
+      placeholder="Search documents by title or category..."
+    >
+  </div>
+
+  <div id="documentsList" class="results">
+    <div class="empty">Loading documents...</div>
+  </div>
+</section><section class="results-section">
     <div class="section-heading"><div><div class="eyebrow">RETRIEVAL OUTPUT</div><h2>Matching documents</h2></div><span id="queryLabel"></span></div>
     <div id="results" class="results"><div class="empty">Run a search to see matching documents.</div></div>
   </section>
