@@ -137,7 +137,9 @@ class Handler(BaseHTTPRequestHandler):
         print("[server] " + fmt % args)
 
 if __name__ == "__main__":
-    server = ThreadingHTTPServer(("127.0.0.1", 8000), Handler)
+    import os
+    port = int(os.environ.get("PORT", 8000))
+    server = ThreadingHTTPServer(("0.0.0.0", port), Handler)
     print("Set-Theoretic Document Retrieval System")
     print("Open http://127.0.0.1:8000 in your browser. Press Ctrl+C to stop.")
     try:
